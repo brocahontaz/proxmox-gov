@@ -3,8 +3,14 @@ resource "proxmox_virtual_environment_group" "service_accounts" {
   group_id = "service-accounts"
 
   acl {
-    path      = "/"
+    path      = "/vms"
     propagate = true
     role_id   = "PVEVMAdmin"
+  }
+
+  acl {
+    path      = "/storage"
+    propagate = true
+    role_id   = "PVEDatastoreAdmin"
   }
 }
