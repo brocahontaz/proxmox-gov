@@ -13,4 +13,10 @@ resource "proxmox_virtual_environment_group" "service_accounts" {
     propagate = true
     role_id   = "PVEDatastoreAdmin"
   }
+
+  acl {
+    path      = "/sdn/zones/localnetwork"
+    propagate = true
+    role_id   = "PVESDNAdmin"
+  }
 }
