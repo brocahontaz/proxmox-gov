@@ -19,4 +19,10 @@ resource "proxmox_virtual_environment_group" "service_accounts" {
     propagate = true
     role_id   = "PVESDNAdmin"
   }
+
+  acl {
+    path      = "/mapping/usb"
+    propagate = true
+    role_id   = "PVEMappingAdmin"
+  }
 }
